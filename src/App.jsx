@@ -3,22 +3,23 @@ import Watches from './components/Watches'
 import Activities from './components/Activities'
 
 const App = () => {
-  const { isAuthenticated, isLoading } = {isAuthenticated: true, isLoading: true}
+  const { isAuthenticated, isLoading } = {isAuthenticated: false, isLoading: false}
 
   isLoading && <h2>Loading...</h2>
 
-  if (isAuthenticated) {
-    return (
-      <>
-        <NavBar />
-        <Watches />
-        <Activities />
-      </>
-    )
-  }
-
   return (
-    <NavBar />
+    <>
+      <NavBar />
+      {
+        isAuthenticated && (
+          <>
+            <Watches />
+            <Activities />
+          </>
+        )
+      }
+      
+    </>
   )
 }
 
