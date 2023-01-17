@@ -3,9 +3,9 @@ import Watches from './components/Watches'
 import Activities from './components/Activities'
 
 const App = () => {
-  const { isAuthenticated, isLoading } = {isAuthenticated: false, isLoading: false}
+  const { isAuthenticated, isLoading } = {isAuthenticated: true, isLoading: false}
 
-  isLoading && <h2>Loading...</h2>
+  if (isLoading) return <h2>Loading...</h2>
 
   return (
     <>
